@@ -1,18 +1,24 @@
-body {
-  text-align: center;
-  justify-content: center;
-}
-
+/*
 .App {
   background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
 }
+*/
 
+.App {
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+}
 .paragraph {
   font-size: 20px;
   width: 55%;
   margin: 0 auto;
 }
 
+.indent {
+  margin-left: 30%;
+}
+
 div {
-  color: white;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
 }

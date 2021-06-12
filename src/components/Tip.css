@@ -1,0 +1,12 @@
+.tip {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+
+.tip-content {
+  margin-left: 20px;
+}
