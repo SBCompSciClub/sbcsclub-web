@@ -10,6 +10,12 @@ import About from "./pages/about/About.js";
 import Workshops from "./pages/workshops/Workshops.js";
 import Admin from "./pages/admin/Admin.js";
 
+
+document.getElementsByTagName("html")[0].classList.add("disabled");
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
 export default function App() {
   return (
     <Router>

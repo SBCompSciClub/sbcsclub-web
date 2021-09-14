@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 
+
+
+
+
+import Officer from "../../components/Officer.js";
 import Fade from "react-reveal/Fade";
 import Text from "../../Text.js";
 import {
@@ -19,17 +24,18 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import "./Home.css";
 
-import Cookies from "universal-cookie";
+import THREEJS from "../../components/three.js"
+import HomeContent from "../../components/HomeContent.js"
+import "../../components/mouseTrail/mouseTrail.js"
 
+import Cookies from "universal-cookie";
 const cookies = new Cookies();
-const insideStyles = {
-  color: "white",
-  fontSize: 50,
-  padding: 20,
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%,-50%)",
+
+
+const fadeStyles = {
+  fontSize: 40,
+  fontWeight: 600,
+  fontFamily: "Open Sans",
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -53,6 +59,24 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
+let names = ["Mr. Schiff", "Hitesh Ale", "Rishi Paladugu", "Yash Nishikant"];
+let roles = [
+  "Supervisor",
+  "Senior Officer",
+  "Senior Officer",
+  "Game Dev Workshop Lead",
+];
+let link =
+  "https://www.notion.so/image/https%3A%2F%2Fwww.notion.so%2Fimages%2Fpage-cover%2Fmet_william_morris_1878.jpg?table=block&id=3a72551f-8de8-4cca-a75f-1268cccb3374&width=3840&userId=&cache=v2";
+
+const listItems = names.map((number, i) => (
+  <Officer name={number} role={roles[i]} img={link} />
+));
+
+
+
+
 
 export default function Home() {
   const [loggedin, setLoggedin] = useState(false);
@@ -98,9 +122,10 @@ export default function Home() {
   );
 
   return (
+    
     <div className="home">
       <div className={classes.grow}>
-        <AppBar position="static">
+        {/*<AppBar position="static">
           <Toolbar>
             <Typography className={classes.title} variant="h6" noWrap>
               SBHS Computer Science Club
@@ -120,42 +145,66 @@ export default function Home() {
               )}
             </div>
           </Toolbar>
-        </AppBar>
+              </AppBar>*/}
 
         {profile}
       </div>
 
-      <div className="background">
-        <Text />
-      </div>
-      <div style={{ height: 500 }}>
-        <div style={insideStyles}>
-          <Fade top>SBHS Computer Science Club</Fade>
+      <THREEJS/>
+      <HomeContent/>
+
+
+      {/*
+      <div style={{ height: 1000 }}></div>
+
+      <Fade bottom delay={800}>
+        <div
+          className="white"
+          style={{
+            border: "1px solid black",
+            boxShadow: "0px 3px 10px black",
+            width: "100%",
+            height: "400px",
+          }}
+        >
+          <div className="centerParent">
+            <Fade bottom distance="100px">
+              <div style={fadeStyles}>SBHS Computer Science Club</div>
+            </Fade>
+          </div>
+          <Fade bottom delay={50} distance="100px">
+            <div
+              className="paragraph home centerParent"
+              style={{ position: "relative", top: "20%" }}
+            >
+              Join the Computer Science Club and learn anything you want!
+              Explore your creative nature by designing and programming
+              interactive websites from the ground up, and learn the beauty of
+              the open-source community. Expand your programming skills and
+              learn the basics of application development applicable to any
+              other computer science-related course or project. All while
+              gaining career and college readiness!
+            </div>
+          </Fade>
+        </div>
+      </Fade>
+
+      <div style={{ height: 500 }}></div>
+      <div
+        className="white"
+        style={{
+          border: "1px solid black",
+          boxShadow: "0px 3px 10px black",
+          width: "100%",
+          height: "400px",
+        }}
+      >
+        <div className="centerParent">Officers</div>
+        <div className="home centerParent" style={{ marginLeft: "200px" }}>
+          <div className="row">{listItems}</div>
         </div>
       </div>
-
-      <div className="paragraph white home">
-        Join the Computer Science Club and learn anything you want! Explore your
-        creative nature by designing and programming interactive websites from
-        the ground up, and learn the beauty of the open-source community. Expand
-        your programming skills and learn the basics of application development
-        applicable to any other computer science-related course or project. All
-        while gaining career and college readiness!
-      </div>
-      <p>HI</p>
-      <p>HI</p>
-      <p>HI</p>
-      <p>HI</p>
-      <p>HI</p>
-      <p>HI</p>
-      <p>HI</p>
-      <p>HI</p>
-      <p>HI</p>
-      <p>HI</p>
-      <p>HI</p>
-      <p>HI</p>
-      <p>HI</p>
-      <p>HI</p>
+      */}
     </div>
   );
 }

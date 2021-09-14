@@ -31,9 +31,13 @@ export default class App extends Component {
           className="techlines"
           version="1.1"
           id="Layer_1"
+          preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 200 800 800"
-          style={{ fill: "none", stroke: "blue" }}
+          viewBox="0 200 600 800"
+          style={{
+            fill: "none",
+            stroke: "purple",
+          }}
         >
           <path
             d="M746.3,647.9c-3.7,0-7.3,0-11,0c-0.9-6.5,2.4-10.7,7.2-14.7c8.5-7,16.4-14.7,24.7-21.9c3.4-2.9,5.2-6.1,4.9-10.7
