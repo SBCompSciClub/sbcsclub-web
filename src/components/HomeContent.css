@@ -33,10 +33,11 @@
 }
 
 #description {
-  width: 50%;
+  width: 60%;
   height: 800px;
   color: #000000;
   position: absolute;
+  text-align: center;
   font-size: 3vmin;
   top: 80%;
   opacity: 0;
@@ -51,7 +52,30 @@
   color: #000000;
   transform: scale(1,1);
 }
-  
+
+
+#workshops-description {
+  height: 800px;
+  opacity: 1;
+  text-align: center;
+}
+
+#workshops-title {
+  width: 60%;
+  font-size: 5vmin;
+  color: black;
+  position: absolute;
+  top: 150%;
+}
+
+#workshops-list {
+  width: 60%;
+  font-size: 2vmin;
+  color: black;
+  position: absolute;
+  top: 160%;
+}
+
 @keyframes transition_in {
     0% {
       text-shadow: 100px 100px 10px #aaa;
@@ -94,3 +118,12 @@
     }
     
   }
+
+
+
+.grid {
+  display: grid;
+
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}

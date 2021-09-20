@@ -24,8 +24,8 @@ cursor.prototype.draw = function() {
 };
 */
 
-let cursor = new Dot("cursor", 10);
-let trail = new Dot("trail", 15);
+let cursor = new Dot("cursor light", 10);
+let trail = new Dot("trail light", 15);
 
 
 let dots = {
@@ -85,6 +85,24 @@ function draw(dotName) {
 
   draw("trail")
   
+ })
+
+ window.addEventListener("scroll", async function(e) {
+   if(window.scrollY > 0){
+     cursor.node.classList.remove("light")
+     cursor.node.classList.add("dark")
+
+     
+     trail.node.classList.remove("light")
+     trail.node.classList.add("dark")
+   } else {
+    cursor.node.classList.remove("dark")
+    cursor.node.classList.add("light")
+
+    
+    trail.node.classList.remove("dark")
+    trail.node.classList.add("light")
+   }
  })
 
 

@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import "./HomeContent.css"
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
+import Workshop from "./Workshop.js"
 
 
 import Cookies from "universal-cookie";
@@ -15,18 +16,37 @@ function HomeContentHook(Component){
 
 
 
-const workshops = ["PC Building", "Artificial Intelligence", "C", "Cybersecurity", "Game Development", "FBLA", "Web Development", "Python"]
-const summarys = [
-  "Build PCs from scratch using hardware parts",
-  "Create AI projects such as chatbots and health predictors",
-  "something ig",
-  "Learn to recognize web vulnerabilities in websites",
-  "Create your own games using JPanel and Pygame",
-  "something ig",
-  "Create your own websites using HTML and CSS",
-  "Basic intro to python ig"
-];
+const workshops = ["PC Building", "Artificial Intelligence", "Cybersecurity", "Game Development", "C", "Web Development", "Python Beginner"]
 
+const leads = [
+  ["Hitesh Ale", "Rishi Paladugu"],
+  ["Satvik Vejendla", "Aditi Ajoykumar"],
+  ["Satvik Vejendla", "Aditi Ajoykumar"],
+  ["Yash Nishikant", "Burhan Naveed"],
+  ["Pooja Raghuram", "Sridula Kunamneni", "Tejas Raghuram"],
+  ["Aashika Parekh", "Jeslin Paulraj"],
+  ["Sharvani Vadlamani", "Shreya Venkateswaran"]];
+
+const descriptions = [
+  "Build your own PCs using hardware parts",
+  "Create AI Models for chatbots and health predictors",
+  "Learn how to identify and exploit web vulnerabilities",
+  "Create your own games using JPanel and Pygame",
+  "Learn C from scratch",
+  "Create your own websites using HTML and CSS",
+  "Learn Python from scratch and make your own projects"
+]
+
+
+const difficulties = [
+  2,
+  3,
+  3,
+  3,
+  2,
+  1,
+  1
+]
 
 export default class HomeContent extends Component {
     constructor(props) {
@@ -105,12 +125,17 @@ export default class HomeContent extends Component {
             gaining career and college readiness!
           </div>
 
-          <div id="workshops-description">
-            <div id="workshops-description-text">
-            This year will be different from previous years, as we will be doing workshops instead of the regular lessons.
-            Students can choose to sign up for specific workshops and will have to attend the lessons for them.
-            Some of the workshops are:
+          <div id="workshops-description" class="center">
+            <div id="workshops-title">
+              <u>Workshops</u>
             </div>
+
+            <div id="workshops-list" class="grid">
+              {workshops.map( (val, i) => {
+                return <Workshop name={val} leads={leads[i]} description={descriptions[i]} difficulty={difficulties[i]}/>
+              })}
+            </div>
+
           </div>
         </div>
       );
