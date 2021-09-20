@@ -23,6 +23,7 @@
     "react-scripts": "4.0.3",
     "react-spring": "^9.2.1",
     "react-vivus": "0.0.2",
+    "three": "^0.132.2",
     "universal-cookie": "^4.0.4",
     "vivus": "^0.4.6",
     "web-vitals": "^1.0.1"

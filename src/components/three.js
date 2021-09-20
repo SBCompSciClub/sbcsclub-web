@@ -1,9 +1,9 @@
-import * as THREE from "../three.js-master/build/three.module.js";
+import * as THREE from 'three/build/three.module.js';
 import React, { Component } from "react";
-import {
+/*import {
   CSS3DRenderer,
   CSS3DSprite,
-} from "../three.js-master/examples/jsm/renderers/CSS3DRenderer.js";
+} from "../three.js-master/examples/jsm/renderers/CSS3DRenderer.js";*/
 import TWEEN from "@tweenjs/tween.js";
 import "./three.css"
 

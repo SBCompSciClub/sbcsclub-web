@@ -18,7 +18,7 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import GoogleSignin from "../../helpers/googlesignin.js";
+//import GoogleSignin from "../../helpers/googlesignin.js";
 
 import firebase from "firebase/app";
 import "firebase/auth";
@@ -95,7 +95,7 @@ export default function Home() {
   };
 
   const login = () => {
-    GoogleSignin();
+    //GoogleSignin();
     setLoggedin(true);
   };
 

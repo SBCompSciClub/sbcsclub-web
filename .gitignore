@@ -24,4 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 
 
-src/three.js-master/
+src/helpers/
