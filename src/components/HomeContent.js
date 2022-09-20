@@ -24,7 +24,7 @@ const leads = [
   ["Satvik Vejendla", "Aditi Ajoykumar"],
   ["Yash Nishikant", "Burhan Naveed"],
   ["Pooja Raghuram", "Sridula Kunamneni", "Tejas Raghuram"],
-  ["Aashika Parekh", "Jeslin Paulraj"],
+  ["Aashika Parekh", "Mahit Mehta"],
   ["Sharvani Vadlamani", "Shreya Venkateswaran"]];
 
 const descriptions = [
