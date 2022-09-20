@@ -14,40 +14,56 @@ function HomeContentHook(Component){
     return <Component mobile={isMobile}/>;
 }
 
-
-
-const workshops = ["PC Building", "Artificial Intelligence", "Cybersecurity", "Game Development", "C", "Web Development", "Python Beginner"]
-
-const leads = [
-  ["Hitesh Ale", "Rishi Paladugu"],
-  ["Satvik Vejendla", "Aditi Ajoykumar"],
-  ["Satvik Vejendla", "Aditi Ajoykumar"],
-  ["Yash Nishikant", "Burhan Naveed"],
-  ["Pooja Raghuram", "Sridula Kunamneni", "Tejas Raghuram"],
-  ["Aashika Parekh", "Mahit Mehta"],
-  ["Sharvani Vadlamani", "Shreya Venkateswaran"]];
-
-const descriptions = [
-  "Build your own PCs using hardware parts",
-  "Create AI Models for chatbots and health predictors",
-  "Learn how to identify and exploit web vulnerabilities",
-  "Create your own games using JPanel and Pygame",
-  "Learn C from scratch",
-  "Create your own websites using HTML and CSS",
-  "Learn Python from scratch and make your own projects"
+const workshops = [
+  {
+    name: "Web Scraping",
+    leads: [ "Mohammad", "Satvik"],
+    difficultyLevel: 0,
+    description: "Web scraping is the act of searching for data on websites. The web scraping workshop will cover the BeautifulSoup library in Python and students will learn how to harvest information from the internet."
+  },
+  {
+    name: "SQL",
+    leads: [ "Swathi", "Aditi" ],
+    difficultyLevel: 0,
+    description: "For the SQL workshop, we will introduce relational databases. SQL commands will be taught and the students in our workshops will download open source databases and practice SQL with the databases. Students will learn how to create database tables, as well as insert, withdraw, add, and delete data."
+  },
+  {
+    name: "Data Structures and Algorithms",
+    leads: [ "Vivaan", "Burhan" ],
+    difficultyLevel: 0,
+    description: "We are running an introductory course on data structures and algorithms where we go over what algorithms, data structures, and time complexity are, and how all of these are important for their practical uses. We will also be going over a few basic sorting and searching algorithms and basic data structures. If we get extra time, we will also be going over some more advanced data structures and algorithms. The course will be taught in Java to save time as everyone who takes it will know how to code in Java."
+  },
+  {
+    name: "Intro to Python",
+    leads: [ "Diya", "Esha" ],
+    difficultyLevel: 0,
+    description: "Introduction to Python will introduce students to the basics of Python through mini projects. Some topics covered will include data types, conditionals, loops, and functions. These principles will then be applied to create a large project by the end of the workshop."
+  },
+  {
+    name: "Cross-Platform Database App",
+    leads: [ "Tejas", "Ali"],
+    difficultyLevel: 0,
+    description: "Within this workshop, students will learn how to make a cross-platform database app. The goal of this database program is to store user information, like names, ages, emails, and phone numbers. In order to make this app, our workshop will use React Native, Java, Node.JS, and, MariaDB. All languages will be taught to the extent possible to make the app, but after teaching what is needed, students can do further if they want to further research the language they coded in."
+  },
+  {
+    name: "MatPlotLib",
+    leads: [ "Abhik", "Yash" ],
+    difficultyLevel: 0,
+    description: "With the Python data visualization workshop, we will be working to work with the MatPlotLib library in Python to use graphics to visualize data on your screen. This workshop is best for students with a more advanced python skill level."
+  },
+  {
+    name: "Flutter App Dev",
+    leads: [ "Shreya", "Sharvani" ],
+    difficultyLevel: 0,
+    description: "The course will focus on mobile app development using Flutter.  Students will learn various technologies, such as the implementation of buttons, text, and different screens. In the end, each student will be able to design their own basic app."
+  },
+  {
+    name: "Web Development",
+    leads: [ "Mahit", "Pooja"],
+    difficultyLevel:  0,
+    description: "In the web development course students will learn how to setup a basic html file with basic elements and learn simple SEO (Search Engine Optimization). Additionally, students will learn how to style the page with css and JavaScript to create simple, effective animations to make their webpage will smooth and snappy. At the end of the class they will be tasked to create a portfolio website with their new skills and assistance from their teachers."
+  }
 ]
-
-
-const difficulties = [
-  2,
-  3,
-  3,
-  3,
-  2,
-  1,
-  1
-]
-
 export default class HomeContent extends Component {
     constructor(props) {
       super(props)
@@ -131,8 +147,16 @@ export default class HomeContent extends Component {
             </div>
 
             <div id="workshops-list" class="grid">
-              {workshops.map( (val, i) => {
-                return <Workshop name={val} leads={leads[i]} description={descriptions[i]} difficulty={difficulties[i]}/>
+              {workshops.map(({ name, leads, description, difficultyLevel }, i) => {
+                return (
+                  <Workshop 
+                    key={i}
+                    name={name} 
+                    leads={leads} 
+                    description={description} 
+                    difficulty={difficultyLevel}
+                  />
+                )
               })}
             </div>
 

@@ -4,6 +4,12 @@
 }
 */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .App {
   background-color: rgb(255, 255, 255);
   height: 100%;
@@ -30,36 +36,10 @@ div {
 
 html {
   overflow-x: hidden;
-}
-
-
-html.enabled::-webkit-scrollbar {
-  width: 15px;
-}
-
-html.disabled {
   overflow-y: hidden;
 }
-
 
 
 html.enabled {
   overflow-y: auto;
 }
-
-html::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-html::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 20px;
-  box-shadow: inset 0 0 5px rgb(39, 39, 39);
-}
-
-/* Handle on hover */
-html::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
