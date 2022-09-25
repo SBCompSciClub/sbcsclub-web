@@ -81,8 +81,6 @@ export default class HomeContent extends Component {
     }
 
     transitionEnd = (elem) => {
-      console.log(elem.target)
-
       /*
       document.getElementById("home-title").classList.remove("transition")
       document.getElementById("home-title").classList.add("after")*/
@@ -115,7 +113,6 @@ export default class HomeContent extends Component {
         document.getElementById("home-title").style.opacity = opacity;
 
       }
-      console.log(this.state.scroll)
 
       if(document.getElementById("description")){
 
@@ -127,7 +124,7 @@ export default class HomeContent extends Component {
       }
 
       return (
-        <div class="center">
+        <div className="center">
           <div id="home-title">
             SBHS Computer Science Club
           </div>
@@ -141,12 +138,12 @@ export default class HomeContent extends Component {
             gaining career and college readiness!
           </div>
 
-          <div id="workshops-description" class="center">
+          <div id="workshops-description" className="center">
             <div id="workshops-title">
-              <u>Workshops</u>
+              Workshops
             </div>
 
-            <div id="workshops-list" class="grid">
+            <div id="workshops-list" className="grid">
               {workshops.map(({ name, leads, description, difficultyLevel }, i) => {
                 return (
                   <Workshop 

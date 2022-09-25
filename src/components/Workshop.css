@@ -1,7 +1,8 @@
 
 .workshop-outer-box {
     background-color: rgb(241, 241, 241);
-    width: 300px;
+    width: 100%;
+    padding: 5px;
     height: 200px;
     padding: 10;
     margin-bottom: 20px;
@@ -27,8 +28,7 @@
 }
 .workshop-name {
     color: black;
-    position: absolute;
-    top: 20%;
+    margin-bottom: 10px;
     font-weight: 700;
 }
 
@@ -36,13 +36,11 @@
 .workshop-leads {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 50%;
 }
 
 
 .workshop-leads > div {
-    font-size: 1.5vmin;
+    font-size: 15px;
 }
 
 .workshop-outer-box:hover .workshop-inner-box{
@@ -55,21 +53,22 @@
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .workshop-back {
-    background-color: rgb(105, 105, 105);
     color: white;
     transform: rotateY(180deg);
 }
 
 .workshop-description {
-    position: absolute;
-    top: 20%;
+    overflow: auto;
+    height: 100%; 
+    border-radius: 15px;
+    padding: 10px;
 }
 
 .workshop-difficulty {
