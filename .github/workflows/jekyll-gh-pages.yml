@@ -30,7 +30,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Install Dependencies
-        run: npm install -f -s
+        run: pnpm install -f -s
       - name: Build Static CRA
         run: npm run build
       - name: Build with Jekyll
